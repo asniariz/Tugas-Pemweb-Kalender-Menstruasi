@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Input Form Screen -->
+        <div id="inputScreen">
+            <h1>Hitung perkiraan masa subur anda</h1>
+            <label>Hari pertama menstruasi</label>
+            <input type="date" id="startDate">
+
+            <label>Lama siklus menstruasi anda (rata-rata)</label>
+            <input type="number" id="cycleLength" value="28" min="20" max="40">
+
+            <button onclick="showCalendar()">Hitung</button>
+        </div>
+
+        <!-- Calendar View Screen -->
+        <div id="calendarScreen" style="display: none;">
+            <h1>Masa subur anda</h1>
+            <p>Klik tanda panah untuk lihat bulan berikutnya</p>
+
+            <div class="calendar-header">
+                <button id="prevMonth">&lt;</button>
+                <span id="currentMonthYear">October 2024</span>
+                <button id="nextMonth">&gt;</button>
+            </div>
+
+            <!-- Day Names -->
+            <div class="day-names">
+                <div>Sen</div>
+                <div>Sel</div>
+                <div>Rab</div>
+                <div>Kam</div>
+                <div>Jum</div>
+                <div>Sab</div>
+                <div>Ming</div>
+            </div>
+
+            <div id="calendar" class="calendar"></div>
+
+            <div class="legend">
+                <p><span class="dot ovulation"></span> Perkiraan ovulasi</p>
+                <p><span class="dot fertile"></span> Masa Subur</p>
+                <p><span class="dot start-cycle"></span> Awal siklus selanjutnya</p>
+            </div>
+
+            <button id="changeDate" onclick="showInputScreen()">Ganti tanggal</button>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
